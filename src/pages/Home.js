@@ -1,8 +1,9 @@
 import React from 'react'
+import Foods from '../components/modules/Foods'
 
 function Home() {
     return (
-        <h1>Here is the home page</h1>
+        <Foods />
     )
 }
 

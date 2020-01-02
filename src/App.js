@@ -1,12 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Navbar from './layout/Navbar';
+import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 
 
+import FoodState from './context/food/FoodState'
+
+
 function App() {
   return (
+    <FoodState>
     <div className="App">
       <Router>
       <Navbar />
@@ -16,6 +20,7 @@ function App() {
       </Switch>
       </Router>
     </div>
+    </FoodState>
   );
 }
 
