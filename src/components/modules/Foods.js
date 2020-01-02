@@ -10,7 +10,7 @@ const Foods = () => {
     const { foods } = foodContext
 
     return (
-        <ul>
+        <ul className = "col-sm container">
             {foods.map(food=>(
                 <FoodItem food = {food} />
             ))}
