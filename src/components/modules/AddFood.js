@@ -1,10 +1,13 @@
 import React, { useState, useContext } from 'react';
 import FoodContext from '../../context/food/foodContext';
-
+import AlertContext from '../../context/alert/alertContext';
+import Alerts from '../layout/Alerts'
 
 const AddFood = () => {
 const foodContext = useContext(FoodContext);
+const alertContext = useContext(AlertContext);
 const { addFood } = foodContext;
+const { setAlert } = alertContext;
 
 const [food, setFood] = useState({
              name: '',
@@ -27,36 +30,60 @@ const onSubmit = e=> {
         carbs: '',
         fat: '',
     });
+    setAlert("succesfull", "danger" )
 };
 
 
     
     return (
+        
         <form onSubmit = {onSubmit} className = "col-sm">
+            <Alerts />
             <h2 className = "text-primary">
                 Add Food
             </h2>
-            <input type = "text" 
+            <div className = "input-group">
+
+            <input 
+            type = "text" 
             placeholder = "Food" 
             name = "name"
             value = {name}
             onChange = {onChange} />
-             <input type = "text" 
+            </div>
+
+            <div className = "input-group">
+
+             <input
+             type = "text" 
             placeholder = "Carbs" 
             name = "carbs"
             value = {carbs}
-            onChange = {onChange} />g
-             <input type = "text" 
+            onChange = {onChange} />
+                <div class="input-group-append">
+            <span class="input-group-text">g</span>
+                </div>
+            </div>
+
+            <div className = "input-group btn-block">
+
+
+             <input
+             type = "text" 
             placeholder = "Fat" 
             name = "fat"
             value = {fat}
-            onChange = {onChange} />g
+            onChange = {onChange} />
+                            <div class="input-group-append">
+            <span class="input-group-text">g</span>
+                </div>
+            </div>
             
            
-        <div>
+        <div className = "input-group">
             <input type = "submit"
             value = {"Add Food"}
-            className = "btn btn-primary btn-block"
+            className = "btn btn-primary"
             />
         </div>
         </form>
