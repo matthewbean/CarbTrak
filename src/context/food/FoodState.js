@@ -43,6 +43,13 @@ const FoodState = props => {
         });
         return x
     }
+    const getTotalFat = ()=>{
+        let y = 0;
+        state.foods.forEach(food => {
+            y += parseInt(food.fat);
+        });
+        return y
+    }
 
 
     return (
@@ -51,7 +58,8 @@ const FoodState = props => {
             foods: state.foods,
             dailyTotal: state.dailyTotal,
             getTotalCarbs,
-            addFood
+            addFood,
+            getTotalFat
         }}
         >
             {props.children}

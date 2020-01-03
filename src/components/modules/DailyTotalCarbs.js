@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import FoodContext from '../../context/food/foodContext'
 
-const DailyTotal = () => {
+const DailyTotalCarbs = () => {
     const foodContext = useContext(FoodContext);
     const { getTotalCarbs } = foodContext
     return (
@@ -11,4 +11,4 @@ const DailyTotal = () => {
     )
 }
 
-export default DailyTotal
+export default DailyTotalCarbs

@@ -1,6 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import FoodItem from './FoodItem';
-import FoodContext from '../../context/food/foodContext'
+import FoodContext from '../../context/food/foodContext';
+import DailyTotalCarbs from './DailyTotalCarbs';
+import DailyTotalFat from './DailyTotalFat'
 
 
 const Foods = () => {
@@ -14,7 +16,8 @@ const Foods = () => {
             {foods.map(food=>(
                 <FoodItem food = {food} />
             ))}
-
+        <DailyTotalCarbs />
+        <DailyTotalFat />
         </ul>
     )
         }

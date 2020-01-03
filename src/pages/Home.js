@@ -1,7 +1,7 @@
-import React from 'react'
-import Foods from '../components/modules/Foods'
-import AddFood from '../components/modules/AddFood'
-import DailyTotal from '../components/modules/DailyTotal'
+import React from 'react';
+import Foods from '../components/modules/Foods';
+import AddFood from '../components/modules/AddFood';
+
 
 
 function Home() {
@@ -11,7 +11,7 @@ function Home() {
                 <AddFood />
                 <Foods />  
             </div>
-            <DailyTotal />
+            
         </div>
     )
 }

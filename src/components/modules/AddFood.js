@@ -6,7 +6,7 @@ import Alerts from '../layout/Alerts'
 const AddFood = () => {
 const foodContext = useContext(FoodContext);
 const alertContext = useContext(AlertContext);
-const { addFood } = foodContext;
+const { addFood, getTotalFat } = foodContext;
 const { setAlert } = alertContext;
 
 const [food, setFood] = useState({
@@ -23,14 +23,24 @@ const onChange = e=> setFood({ ...food, [e.target.name]: e.target.value });
 
 const onSubmit = e=> {
     e.preventDefault();
+    var reg = /^[0-9]+$/;
+
+
+    if(name === "" || carbs === ""){
+        setAlert("Please fill out every field", "danger" )
+    }else if(!reg.test(carbs) || !reg.test(fat)){
+        setAlert("Please only enter numbers for carbs and fat", "danger")
+    }else{
+    
     addFood(food);
-    console.log('food added');
     setFood({
         name: '',
         carbs: '',
         fat: '',
     });
-    setAlert("succesfull", "danger" )
+}
+
+  
 };
 
 
